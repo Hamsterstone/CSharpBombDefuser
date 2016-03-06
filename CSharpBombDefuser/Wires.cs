@@ -42,15 +42,11 @@ namespace CSharpBombDefuser
         //Method to set DangerWire for sending Wires object
         public Wires MakeDangerWire(Wires sender)
         {
-            Wires fakeWires = sender;
-            int dangerWire = RandomiseDangerWire();
-            fakeWires.DangerWire = dangerWire;
 
-            //foreach (Wires fakeWire in fakeWires)
-            //    if (fakeWire.WireNumber == dangerWire)
-            //    {
-            //        fakeWire.IsDangerWire = true;
-            //    }
+            // Make a fake Wires object
+            Wires fakeWires = sender;
+            //Get a random number for DangerWire in fakeWires
+            fakeWires.DangerWire = RandomiseDangerWire();
             return fakeWires;
         }
 

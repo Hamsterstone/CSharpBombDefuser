@@ -219,7 +219,7 @@ namespace CSharpBombDefuser
         //Method to reset all game elements. 
         private void ResetGame()
         {
-            //for loop: change all wires array to uncut, 
+            //for loop: change all elements in CutWires array to uncut, 
             for (int i = 0; i < 6; i++)
             {
                 GameVariables.BombWires.CutWires[i] = "Uncut";
@@ -227,7 +227,7 @@ namespace CSharpBombDefuser
             
             //game counters to zero
             
-            //pictures to uncut
+            //Reset all wire pictures to uncut
             btnWire1.Image = Properties.Resources.Wire;
             btnWire2.Image = Properties.Resources.Wire;
             btnWire3.Image = Properties.Resources.Wire;
@@ -274,6 +274,7 @@ namespace CSharpBombDefuser
             MessageBox.Show(message, caption);
         }
     }
+    //Class to hold variables for the game
     public class GameVariables
     {
         
