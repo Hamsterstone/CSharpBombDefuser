@@ -44,11 +44,25 @@ namespace UnitTestProject1
             int buttonNumber = newWires.RandomiseDangerWire();
             
             //test that image starts as null
-            Assert.IsTrue(fakeButton.Image==null);
+            Assert.IsNull(fakeButton.Image);
             //call the tested method
             Wires.CutWire(fakeButton,buttonNumber-1);
             //test that image has been changed
-            Assert.IsTrue(fakeButton.Image != null);
+            Assert.IsNotNull(fakeButton.Image);
+        }
+
+        [TestMethod]
+        public void TestMakeDangerWire()
+        {
+            //Make a Wires object
+            Wires newWires=new Wires();
+            // Check DangerWire initialises to 0
+            Assert.IsTrue(newWires.DangerWire==0);
+            //Run MakeDangerWire
+            newWires.MakeDangerWire(newWires);
+            //Test DangerWire has changed from 0
+            Assert.IsTrue(newWires.DangerWire!=0);
+
         }
     }
 }
